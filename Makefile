@@ -6,7 +6,7 @@
 #    By: pdelefos <pdelefos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 15:22:44 by pdelefos          #+#    #+#              #
-#    Updated: 2016/05/09 14:19:46 by pdelefos         ###   ########.fr        #
+#    Updated: 2016/05/10 15:48:20 by pdelefos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ LIBFT = libft/libft.a
 SRC_PATH = src
 SRC_NAME = ft_printf.c \
 		   parse_format.c \
+		   parse_options.c \
+		   test_flags.c
 
 OBJ_PATH = obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
@@ -45,10 +47,8 @@ main:
 	gcc main.c libftprintf.a -Iincludes
 
 $(NAME): $(OBJ) $(LIBFT)
-	@libtool -static -o $@ $^
+	@libtool -static -v -o $@ $^
 	@echo "$(GREEN)libtool$(NO_COLOR) -static -o $(MAGENTA)>>$(NO_COLOR) $(OBJ_PATH) $(LIBFT) $(MAGENTA)>>$(NO_COLOR) $(NAME)"
-	@ranlib $(NAME)
-	@echo "$(GREEN)RANLIB$(NO_COLOR) $(MAGENTA)>>$(NO_COLOR) $(LIB_NAME)"
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
