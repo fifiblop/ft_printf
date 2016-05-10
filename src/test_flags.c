@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_flags.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/08 16:45:02 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/10 18:45:14 by pdelefos         ###   ########.fr       */
+/*   Created: 2016/05/10 10:49:09 by pdelefos          #+#    #+#             */
+/*   Updated: 2016/05/10 16:04:47 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <locale.h>
-
-int		main(void)
+int		is_option(char c)
 {
-	setlocale(LC_ALL, "en_US.UTF-8");
-	printf("|%12@d|\n");
-	printf("|%-12@d|\n");
-	printf("|%l+d|\n", 21);
-	printf("|%8l-d|\n", 21);
-	printf("|% 2d|\n", 21);
-	printf("|%0d|\n", 21);
-	printf("|%0d|\n", 21);
-	printf("|%12.-2s|\n", "yoyo");
+	if (c == '#' || c == '+' || c == '-' || c == ' ' || c == '0')
+		return (1);
+	return (0);
 }
+
+int		is_type(char c)
+{
+	if (c == 's' || c == 'S' || c == 'p' || c == 'd' || c == 'D' || c == 'i' ||
+		c == 'o' || c == 'O' || c == 'u' || c == 'U' || c == 'x' || c == 'X' ||
+		c == 'c' || c == 'C')
+		return (1);
+	return (0);
+}
+
+int		is_percent(char c)
+{
+	return (c == '%' ? 1 : 0);
+}
+

@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 18:21:49 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/09 14:35:38 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/10 18:46:50 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef	enum	e_type
 
 typedef struct	s_opt
 {
+	char		*str;
 	t_bool		hash;
 	t_bool		zero;
 	t_bool		plus;
@@ -46,5 +47,10 @@ typedef struct	s_opt
 
 int		ft_printf(const char *restrict format, ...);
 int		parse_format(const char *restrict format, t_list **lst_opt);
+
+void	parse_option(char *str_options, t_opt *opt);
+
+int		is_type(char c);
+int		is_percent(char c);
 
 #endif
