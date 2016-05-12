@@ -36,14 +36,15 @@ void	print_opt(t_opt *opt)
 	print_bool(opt->minus);
 	ft_putstr(" | space : ");
 	print_bool(opt->space);
-	ft_putnl();
-	/*ft_putstr(" | min_width : ");*/
+	/*ft_putnl();*/
+	ft_putstr(" | min_width : ");
+	ft_putnbr(opt->min_w);
 	/*ft_putstr(" | accuracy : ");*/
 	/*ft_putstr(" | modifier : ");*/
 	/*ft_putstr(" | type : ");*/
 	/*ft_putstr(" | percent : ");*/
 	/*print_bool(opt->perc);*/
-	/*ft_putnl();*/
+	ft_putnl();
 }
 
 void	free_node(t_list *lst)

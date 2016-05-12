@@ -41,7 +41,7 @@ MAGENTA = \x1b[35;01m
 
 all: makelibft $(NAME)
 
-comp: all main
+comp: re main
 
 main:
 	gcc main.c libftprintf.a -Iincludes

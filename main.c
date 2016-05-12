@@ -14,11 +14,15 @@
 
 int		main(void)
 {
-	ft_printf("je suis %+ 010.7ld lol", "fou");
-	ft_printf("je suis %+ #10.7ld lol", "fou");
-	ft_printf("je suis %+-10.7ld lol", "fou");
-	ft_printf("je suis %+ 010.-7ld lol", "fou");
-	ft_printf("je suis %010.7ld lol", "fou");
-	ft_printf("je suis %10.7+ld lol", "fou");
+	/*ft_putendl("-----options tests-----");*/
+	/*ft_printf("je suis %+ 010.7ld lol %.3%", "fou");*/
+	/*ft_printf("je suis %+ #10.7ld lol", "fou");*/
+	/*ft_printf("je suis %+-10.7ld lol", "fou");*/
+	/*ft_printf("je suis %+ 010.-7ld lol", "fou");*/
+	/*ft_printf("je suis %010.7ld lol", "fou");*/
+	/*ft_printf("je suis %10.7+ld lol", "fou");*/
+	ft_putendl("-----minimum width tests-----");
+	ft_printf("%.6d", 42);
+	ft_printf("%+0# 26d", 42);
 	return (0);
 }

@@ -36,5 +36,13 @@ void	parse_option(char *str_options, t_opt *opt)
 
 void	parse_min_width(char *str_options, t_opt *opt)
 {
+	int	i;
 
+	i = 1;
+	while (is_option(str_options[i]))
+		i++;
+	if (str_options[i] == '.')
+		opt->min_w = 0;
+	else
+		opt->min_w = ft_atoi(&str_options[i]);
 }

@@ -17,7 +17,7 @@
 
 typedef enum	e_bool
 {
-	TRUE, FALSE
+	TRUE = 1, FALSE = 0
 }				t_bool;
 
 typedef	enum	e_mod
@@ -49,7 +49,9 @@ int		ft_printf(const char *restrict format, ...);
 int		parse_format(const char *restrict format, t_list **lst_opt);
 
 void	parse_option(char *str_options, t_opt *opt);
+void	parse_min_width(char *str_options, t_opt *opt);
 
+int		is_option(char c);
 int		is_type(char c);
 int		is_percent(char c);
 

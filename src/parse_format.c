@@ -22,6 +22,7 @@ void	init_opt(t_opt *opt)
 	opt->minus = FALSE;
 	opt->space = FALSE;
 	opt->perc = FALSE;
+	opt->min_w = 0;
 }
 
 t_opt	get_options(char *str_option)
@@ -31,6 +32,7 @@ t_opt	get_options(char *str_option)
 	init_opt(&opt);
 	opt.str = ft_strdup(str_option);
 	parse_option(str_option, &opt);
+	parse_min_width(str_option, &opt);
 	return (opt);
 }
 

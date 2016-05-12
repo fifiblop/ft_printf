@@ -23,5 +23,5 @@ int		main(void)
 	printf("|% 2d|\n", 21);
 	printf("|%0d|\n", 21);
 	printf("|%0d|\n", 21);
-	printf("|%12.-2s|\n", "yoyo");
+	printf("|%.+1d|\n", 42);
 }
