@@ -6,11 +6,12 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:13:19 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/10 18:46:16 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/12 19:41:08 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+#include <stdio.h>
 
 int		main(void)
 {
@@ -21,8 +22,27 @@ int		main(void)
 	/*ft_printf("je suis %+ 010.-7ld lol", "fou");*/
 	/*ft_printf("je suis %010.7ld lol", "fou");*/
 	/*ft_printf("je suis %10.7+ld lol", "fou");*/
-	ft_putendl("-----minimum width tests-----");
-	ft_printf("%.6d", 42);
-	ft_printf("%+0# 26d", 42);
+	/*ft_putendl("-----minimum width tests-----");*/
+	/*ft_printf("%.6d", 42);*/
+	/*ft_printf("%7.6d", 42);*/
+	/*ft_printf("%+0# 26d", 42);*/
+	/*ft_printf("%+026d", 42);*/
+	/*ft_printf("%+0# 26.-7565d", 42);*/
+	/*ft_putendl("-----length modifier tests-----");*/
+	/*ft_printf("%.6hd", 42);*/
+	/*ft_printf("%7.6d", 42);*/
+	/*ft_printf("%+0# ll26d", 42);*/
+	/*ft_printf("%+026zd", 42);*/
+	/*ft_printf("%+0# 26.-7565hhd", 42);*/
+	/*ft_printf("%.3%", 42);*/
+	/*ft_putendl("-----type tests-----");*/
+	/*ft_printf("%.6hd", 42);*/
+	/*ft_printf("%7.6c", 42);*/
+	/*ft_printf("%+0# ll26p", 42);*/
+	/*ft_printf("%+026zD", 42);*/
+	/*ft_printf("%+0# 26.-7565hhi", 42);*/
+	/*ft_printf("%.3%", 42);*/
+	printf("%d\n", ft_printf("top %010c\n", 'c'));
+	printf("%d", printf("top %010c\n", 'c'));
 	return (0);
 }

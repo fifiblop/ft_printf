@@ -6,20 +6,21 @@
 #    By: pdelefos <pdelefos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 15:22:44 by pdelefos          #+#    #+#              #
-#    Updated: 2016/05/10 15:48:20 by pdelefos         ###   ########.fr        #
+#    Updated: 2016/05/12 19:38:11 by pdelefos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-LIB_NAME = $(NAME)
-LIB_TMP = libtmp.a
 LIBFT = libft/libft.a
 
 SRC_PATH = src
 SRC_NAME = ft_printf.c \
 		   parse_format.c \
 		   parse_options.c \
-		   test_flags.c
+		   print_format.c \
+		   print_c.c \
+		   test_flags.c \
+		   tools.c
 
 OBJ_PATH = obj
 OBJ_NAME = $(SRC_NAME:.c=.o)
@@ -47,7 +48,7 @@ main:
 	gcc main.c libftprintf.a -Iincludes
 
 $(NAME): $(OBJ) $(LIBFT)
-	@libtool -static -v -o $@ $^
+	@libtool -static -o $@ $^
 	@echo "$(GREEN)libtool$(NO_COLOR) -static -o $(MAGENTA)>>$(NO_COLOR) $(OBJ_PATH) $(LIBFT) $(MAGENTA)>>$(NO_COLOR) $(NAME)"
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c

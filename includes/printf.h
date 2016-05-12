@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 18:21:49 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/10 18:46:50 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/12 19:12:39 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PRINTF_H
 
 # include "libft.h"
+# include <stdarg.h>
 
 typedef enum	e_bool
 {
@@ -22,13 +23,8 @@ typedef enum	e_bool
 
 typedef	enum	e_mod
 {
-	hh, h, ll, l, j, z
+	hh, h, ll, l, j, z, no_m
 }				t_mod;
-
-typedef	enum	e_type
-{
-	s, S, p, d, D, i, o, O, u, U, x, X, c, C
-}				t_type;
 
 typedef struct	s_opt
 {
@@ -39,20 +35,35 @@ typedef struct	s_opt
 	t_bool		minus;
 	t_bool		space;
 	int			min_w;
-	int			accu;
+	t_bool		accu;
+	int			accu_v;
 	t_mod		mod;
-	t_type		type;
-	t_bool		perc;
+	char		type;
 }				t_opt;
 
-int		ft_printf(const char *restrict format, ...);
-int		parse_format(const char *restrict format, t_list **lst_opt);
+int				ft_printf(const char *restrict format, ...);
+int				parse_format(const char *restrict format, t_list **lst_opt);
 
-void	parse_option(char *str_options, t_opt *opt);
-void	parse_min_width(char *str_options, t_opt *opt);
+void			parse_option(char *str_options, t_opt *opt);
+void			parse_min_width(char *str_options, t_opt *opt);
+void			parse_accuracy(char *str_options, t_opt *opt);
+void			parse_length_modifier(char *str_options, t_opt *opt);
+void			parse_type(char *str_options, t_opt *opt);
 
-int		is_option(char c);
-int		is_type(char c);
-int		is_percent(char c);
+int				print_format(const char *format, t_list **lst_opt,
+				va_list *args);
+int				print_arg(t_opt *opt, va_list *args);
+int				print_arg2(t_opt *opt, va_list *args);
+
+int				print_c(t_opt *opt, va_list *args);
+
+int				is_option(char c);
+int				is_length_modifier(char c);
+int				is_type(char c);
+int				is_percent(char c);
+
+void			print_bool(t_bool bool);
+void			print_mod(t_mod mod);
+void			print_opt(t_opt *opt);
 
 #endif
