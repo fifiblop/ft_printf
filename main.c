@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:13:19 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/12 19:41:08 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/13 10:47:24 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ int		main(void)
 	/*ft_printf("%+026zD", 42);*/
 	/*ft_printf("%+0# 26.-7565hhi", 42);*/
 	/*ft_printf("%.3%", 42);*/
-	printf("%d\n", ft_printf("top %010c\n", 'c'));
-	printf("%d", printf("top %010c\n", 'c'));
+	ft_putendl("-----char tests-----");
+	ft_printf("top %c\n", 'c');
+	ft_printf("top %+02.1c\n", 'c');
+	ft_printf("top %010c\n", 'c');
+	ft_printf("top %-02c\n", 'c');
+	ft_printf("top %+0.1c\n", 'c');
 	return (0);
 }

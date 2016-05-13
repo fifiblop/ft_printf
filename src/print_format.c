@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 16:44:31 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/12 19:20:45 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/13 10:05:23 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int		print_format(const char *format, t_list **lst_opt, va_list *args)
 	i = 0;
 	ret = 0;
 	lst = *lst_opt;
-	(void)args;
 	while (format[i])
 	{
 		if (format[i] == '%')
