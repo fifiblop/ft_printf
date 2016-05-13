@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:13:19 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 10:47:24 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/13 19:38:28 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,20 @@ int		main(void)
 	/*ft_printf("%+026zD", 42);*/
 	/*ft_printf("%+0# 26.-7565hhi", 42);*/
 	/*ft_printf("%.3%", 42);*/
-	ft_putendl("-----char tests-----");
-	ft_printf("top %c\n", 'c');
-	ft_printf("top %+02.1c\n", 'c');
-	ft_printf("top %010c\n", 'c');
-	ft_printf("top %-02c\n", 'c');
-	ft_printf("top %+0.1c\n", 'c');
+	/*ft_putendl("-----char tests-----");*/
+	/*ft_printf("top |%c|\n", 'c');*/
+	/*ft_printf("top |%+02.1c|\n", 'c');*/
+	/*ft_printf("top |%010c|\n", 'c');*/
+	/*ft_printf("top |%-02c|\n", 'c');*/
+	/*ft_printf("top |%+0.1c|\n", 'c');*/
+	/*ft_putendl("-----int tests-----");*/
+	/*ft_printf("%hd\n", 327677);*/
+	/*printf("%hd\n", 327677);*/
+	/*ft_printf("%lld\n", 128);*/
+	/*printf("%llD\n", 128);*/
+	/*ft_printf("%-12#.-17c", 42);*/
+	printf("%d\n", ft_printf("%hhu\n", 255));
+	printf("%d\n", printf("%hhu\n", 255));
+	printf("%llD", 42);
 	return (0);
 }

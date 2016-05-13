@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_c.c                                          :+:      :+:    :+:   */
+/*   print_s_decimal.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/12 18:45:55 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 17:15:10 by pdelefos         ###   ########.fr       */
+/*   Created: 2016/05/13 18:21:19 by pdelefos          #+#    #+#             */
+/*   Updated: 2016/05/13 19:30:38 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 #include <stdarg.h>
-#include <wchar.h>
+#include <stdlib.h>
 
-int		print_c(t_opt *opt, va_list *args)
+int			print_s_decimal(t_opt *opt, va_list *args)
 {
-	unsigned char c;
+	long long	i;
+	char		*str;
+	int			size;
 
-	c = va_arg(*args, int);
-	print_width_before(opt, opt->min_w - 1);
-	write(1, &c, 1);
-	print_width_after(opt, opt->min_w - 1);
-	if (opt->min_w > 0)
-		return (opt->min_w);
-	return (1);
+	i = set_length_modifier(opt, args);
+	str = ft_itoa_base_ll(i, 10);
+	size = ft_strlen(str);
+	ft_putstr(str);
+	free(str);
+	return (0);
 }

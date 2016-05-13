@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_c.c                                          :+:      :+:    :+:   */
+/*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/12 18:45:55 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 17:15:10 by pdelefos         ###   ########.fr       */
+/*   Created: 2016/05/13 17:00:43 by pdelefos          #+#    #+#             */
+/*   Updated: 2016/05/13 17:21:34 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 #include <stdarg.h>
-#include <wchar.h>
 
-int		print_c(t_opt *opt, va_list *args)
+void	ft_putnstr(char *str, int n)
 {
-	unsigned char c;
+	int i;
 
-	c = va_arg(*args, int);
-	print_width_before(opt, opt->min_w - 1);
-	write(1, &c, 1);
-	print_width_after(opt, opt->min_w - 1);
-	if (opt->min_w > 0)
+	i = 0;
+	while (i < n && str[i])
+		write(1, &str[i++], 1);
+}
+
+int		print_str(t_opt *opt, va_list *args)
+{
+	char	*str;
+	int		size;
+
+	if ((str = va_arg(*args, char*)) == NULL)
+		str = "(null)";
+	size = ft_strlen(str);
+	if (opt->accu && opt->accu_v < size)
+		size = opt->accu_v;
+	print_width_before(opt, opt->min_w - size);
+	ft_putnstr(str, size);
+	print_width_after(opt, opt->min_w - size);
+	if (opt->min_w > size)
 		return (opt->min_w);
-	return (1);
+	return (size);
 }

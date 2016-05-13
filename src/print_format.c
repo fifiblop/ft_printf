@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 16:44:31 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 10:05:23 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/13 19:10:58 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int		print_arg(t_opt *opt, va_list *args)
 {
 	if (opt->type == '%')
 		return (write(1, "%", 1));
-	else if (opt->type == 's')
-		return (0);
-	else if (opt->type == 'S')
+	else if (opt->type == 's' && opt->mod != l)
+		return (print_str(opt, args));
+	else if (opt->type == 'S' || (opt->type == 's' && opt->mod == l))
 		return (0);
 	else if (opt->type == 'p')
 		return (0);
 	else if (opt->type == 'd' || opt->type == 'i')
-		return (0);
+		return (print_s_decimal(opt, args));
 	else if (opt->type == 'D')
 		return (0);
 	else if (opt->type == 'o')
@@ -34,11 +34,10 @@ int		print_arg(t_opt *opt, va_list *args)
 
 int		print_arg2(t_opt *opt, va_list *args)
 {
-	(void)args;
 	if (opt->type == 'O')
 		return (0);
 	else if (opt->type == 'u')
-		return (0);
+		return (print_u_decimal(opt, args));
 	else if (opt->type == 'U')
 		return (0);
 	else if (opt->type == 'x' || opt->type == 'X')

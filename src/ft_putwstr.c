@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_c.c                                          :+:      :+:    :+:   */
+/*   ft_putwstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/12 18:45:55 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 17:15:10 by pdelefos         ###   ########.fr       */
+/*   Created: 2016/05/06 16:12:02 by pdelefos          #+#    #+#             */
+/*   Updated: 2016/05/06 16:12:22 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-#include <stdarg.h>
-#include <wchar.h>
 
-int		print_c(t_opt *opt, va_list *args)
+void	ft_putwstr(wchar_t *str)
 {
-	unsigned char c;
+	int		i;
 
-	c = va_arg(*args, int);
-	print_width_before(opt, opt->min_w - 1);
-	write(1, &c, 1);
-	print_width_after(opt, opt->min_w - 1);
-	if (opt->min_w > 0)
-		return (opt->min_w);
-	return (1);
+	i = 0;
+	while (str[i])
+		ft_putwchar(str[i++]);
 }

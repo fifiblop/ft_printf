@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_c.c                                          :+:      :+:    :+:   */
+/*   min_width.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/12 18:45:55 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 17:15:10 by pdelefos         ###   ########.fr       */
+/*   Created: 2016/05/13 13:38:59 by pdelefos          #+#    #+#             */
+/*   Updated: 2016/05/13 13:40:23 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-#include <stdarg.h>
-#include <wchar.h>
 
-int		print_c(t_opt *opt, va_list *args)
+void	print_width_before(t_opt *opt, int size)
 {
-	unsigned char c;
+	if (size > 0 && !opt->minus && !opt->zero)
+		ft_putnchar(' ', size);
+	else if (size > 0 && !opt->minus && opt->zero)
+		ft_putnchar('0', size);
+}
 
-	c = va_arg(*args, int);
-	print_width_before(opt, opt->min_w - 1);
-	write(1, &c, 1);
-	print_width_after(opt, opt->min_w - 1);
-	if (opt->min_w > 0)
-		return (opt->min_w);
-	return (1);
+void	print_width_after(t_opt *opt, int size)
+{
+	if (size > 0 && opt->minus)
+		ft_putnchar(' ', size);
 }
