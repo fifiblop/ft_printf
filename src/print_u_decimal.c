@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/13 18:30:39 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 19:28:14 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/18 18:51:11 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,20 @@ int					print_u_decimal(t_opt *opt, va_list *args)
 {
 	unsigned long long	i;
 	char				*str;
+	int					size;
 
 	i = set_length_modifier_u(opt, args);
 	str = ft_itoa_base_ull(i, 10);
+	str = remove_minus(str);
+	str = add_acc_opt(opt, str, FALSE);
+	size = ft_strlen(str);
+	print_width_before_num(opt, opt->min_w - size, FALSE);
+	if (opt->accu && opt->accu_v == 0)
+		return (0);
 	ft_putstr(str);
+	print_width_after(opt, opt->min_w - size);
 	free(str);
-	return (0);
+	if (opt->min_w > size)
+		return (opt->min_w);
+	return (size);
 }

@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/13 19:27:29 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 19:28:27 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/16 18:32:38 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ long long			set_length_modifier(t_opt *opt, va_list *args)
 		i = (short)va_arg(*args, long long);
 	else if (opt->mod == l)
 		i = (long)va_arg(*args, long long);
+	else if (opt->mod == no_m)
+		i = (int)va_arg(*args, int);
 	else
 		i = (long long)va_arg(*args, long long);
 	return (i);

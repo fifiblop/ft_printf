@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 18:21:49 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 19:31:24 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/18 18:18:47 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,12 @@ void				print_mod(t_mod mod);
 void				print_opt(t_opt *opt);
 
 void				ft_putnchar(char c, int n);
+char				*putchar_before_str(char *str, char c);
+char				*remove_minus(char *str);
+char				*add_acc_opt(t_opt *opt, char *str, int neg);
 void				print_width_before(t_opt *opt, int size);
 void				print_width_after(t_opt *opt, int size);
+void				print_width_before_num(t_opt *opt, int size, t_bool neg);
 long long			set_length_modifier(t_opt *opt, va_list *args);
 unsigned long long	set_length_modifier_u(t_opt *opt, va_list *args);
 

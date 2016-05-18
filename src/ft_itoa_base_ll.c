@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/13 19:15:00 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 19:15:02 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/16 17:06:21 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char				*ft_itoa_base_ll(long long n, int base)
 	if (base < 2 || base > 16)
 		return (NULL);
 	len = ft_nblen(n);
-	sign = (n < 0 ? 1 : 0);
+	sign = (n < 0) ? 1 : 0;
 	str = NULL;
 	str = (char*)malloc(sizeof(char) * (len + sign + 1));
 	if (str)

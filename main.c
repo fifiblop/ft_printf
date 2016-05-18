@@ -6,12 +6,13 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:13:19 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 19:38:28 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/18 18:59:43 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 #include <stdio.h>
+#include <locale.h>
 
 int		main(void)
 {
@@ -54,8 +55,58 @@ int		main(void)
 	/*ft_printf("%lld\n", 128);*/
 	/*printf("%llD\n", 128);*/
 	/*ft_printf("%-12#.-17c", 42);*/
-	printf("%d\n", ft_printf("%hhu\n", 255));
-	printf("%d\n", printf("%hhu\n", 255));
-	printf("%llD", 42);
+	/*printf("%d\n", ft_printf("%hhu\n", 255));*/
+	/*printf("%d\n", printf("%hhu\n", 255));*/
+	/*ft_printf("%d", 42);*/
+	/*ft_printf("%010.4d\n", -42);*/
+	/*printf("%010.4d\n", -42);*/
+	/*ft_printf("%10.4d\n", -42);*/
+	/*printf("%10.4d\n", -42);*/
+	/*ft_printf("%0.4d\n", -42);*/
+	/*printf("%0.4d\n", -42);*/
+	/*ft_printf("%10d\n", 42);*/
+	/*printf("%10d\n", 42);*/
+	/*printf("----- +d : 42 -----\n");*/
+	/*ft_printf("%+d\n", 42);*/
+	/*printf("%+d\n", 42);*/
+	printf("----- .2d : -1 -----\n");
+	ft_printf("%.2d\n", -1);
+	printf("%.2d\n", -1);
+	printf("----- +5.2d : 1 -----\n");
+	ft_printf("%+5.2d\n", 1);
+	printf("%+5.2d\n", 1);
+	printf("----- +05.2d : 1 -----\n");
+	ft_printf("%+05.2d\n", 1);
+	printf("%+05.2d\n", 1);
+	printf("----- +03d : 1 -----\n");
+	ft_printf("%+03d\n", 1);
+	printf("%+03d\n", 1);
+	printf("----- +3d : 1 -----\n");
+	ft_printf("%+3d\n", 1);
+	printf("%+3d\n", 1);
+	printf("----- 010d : -42 -----\n");
+	ft_printf("%010d\n", -42);
+	printf("%010d\n", -42);
+	printf("----- 10d : -42 -----\n");
+	ft_printf("%10d\n", -42);
+	printf("%10d\n", -42);
+	printf("----- 03d : 0 -----\n");
+	ft_printf("% 03d\n", 0);
+	printf("% 03d\n", 0);
+	printf("----- 3d : 0 -----\n");
+	ft_printf("% 3d\n", 0);
+	printf("% 3d\n", 0);
+	printf("----- .4d : 424242 -----\n");
+	ft_printf("%.4d\n", 424242);
+	printf("%.4d\n", 424242);
+	printf("----- +03d : 123456 -----\n");
+	ft_printf("%+03d\n", 123456);
+	printf("%+03d\n", 123456);
+	printf("----- .d : 0 -----\n");
+	ft_printf("%.d\n", 0);
+	printf("%.d\n", 0);
+	printf("----- .0d : 0 -----\n");
+	ft_printf("%.0d\n", 0);
+	printf("%.0d\n", 0);
 	return (0);
 }
