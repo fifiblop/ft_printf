@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 16:44:31 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 19:10:58 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/19 13:35:55 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		print_arg(t_opt *opt, va_list *args)
 	else if (opt->type == 'D')
 		return (0);
 	else if (opt->type == 'o')
-		return (0);
+		return (print_u_octal(opt, args));
 	return (print_arg2(opt, args));
 }
 

@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 18:21:49 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/18 18:18:47 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/19 11:05:13 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int					print_c(t_opt *opt, va_list *args);
 int					print_str(t_opt *opt, va_list *args);
 int					print_s_decimal(t_opt *opt, va_list *args);
 int					print_u_decimal(t_opt *opt, va_list *args);
+int					print_u_octal(t_opt *opt, va_list *args);
 
 int					is_option(char c);
 int					is_length_modifier(char c);

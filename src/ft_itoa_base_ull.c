@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/13 19:14:34 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/13 19:14:37 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/19 17:39:37 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,16 @@ static unsigned long long	ft_nblen(unsigned long long n)
 char						*ft_itoa_base_ull(unsigned long long n, int base)
 {
 	char				*str;
+	char				*tmp;
 	unsigned long long	len;
 
 	if (base < 2 || base > 16)
 		return (NULL);
 	len = ft_nblen(n);
-	str = NULL;
-	str = (char*)malloc(sizeof(char) * (len + 1));
+	printf("%llo\n", n);
+	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	tmp = str;
 	if (str)
 	{
 		str = str + len;
@@ -55,5 +58,5 @@ char						*ft_itoa_base_ull(unsigned long long n, int base)
 			n = n / base;
 		}
 	}
-	return (str);
+	return (tmp);
 }
