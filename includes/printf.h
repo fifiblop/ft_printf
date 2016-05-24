@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 18:21:49 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/19 11:05:13 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/24 19:01:11 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ typedef	enum		e_mod
 {
 	hh, h, ll, l, j, z, no_m
 }					t_mod;
+
+typedef enum		e_cap
+{
+	UPPER = 1, LOWER = 0
+}					t_cap;
 
 typedef struct		s_opt
 {
@@ -60,6 +65,8 @@ int					print_str(t_opt *opt, va_list *args);
 int					print_s_decimal(t_opt *opt, va_list *args);
 int					print_u_decimal(t_opt *opt, va_list *args);
 int					print_u_octal(t_opt *opt, va_list *args);
+int					print_u_hexa(t_opt *opt, va_list *args);
+int					print_ptr(t_opt *opt, va_list *args);
 
 int					is_option(char c);
 int					is_length_modifier(char c);
@@ -74,6 +81,8 @@ void				ft_putnchar(char c, int n);
 char				*putchar_before_str(char *str, char c);
 char				*remove_minus(char *str);
 char				*add_acc_opt(t_opt *opt, char *str, int neg);
+void				null_options_sconv(t_opt *opt);
+int					null_accuracy(t_opt *opt, char *str, long long i);
 void				print_width_before(t_opt *opt, int size);
 void				print_width_after(t_opt *opt, int size);
 void				print_width_before_num(t_opt *opt, int size, t_bool neg);
@@ -81,5 +90,6 @@ long long			set_length_modifier(t_opt *opt, va_list *args);
 unsigned long long	set_length_modifier_u(t_opt *opt, va_list *args);
 
 char				*ft_itoa_base_ll(long long n, int base);
-char				*ft_itoa_base_ull(unsigned long long n, int base);
+char				*ft_itoa_base_ull(unsigned long long n, int base,
+					t_cap cap);
 #endif

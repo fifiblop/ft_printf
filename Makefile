@@ -6,7 +6,7 @@
 #    By: pdelefos <pdelefos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 15:22:44 by pdelefos          #+#    #+#              #
-#    Updated: 2016/05/19 16:43:00 by pdelefos         ###   ########.fr        #
+#    Updated: 2016/05/24 18:18:59 by pdelefos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,9 @@ LIBFT = libft/libft.a
 SRC_PATH = src
 SRC_NAME = ft_printf.c parse_format.c parse_options.c print_format.c print_c.c \
 		   print_str.c print_s_decimal.c print_u_decimal.c print_u_octal.c \
-		   test_flags.c ft_itoa_base_ll.c ft_itoa_base_ull.c ft_putnchar.c \
-		   min_width.c add_accuracy_options.c length_modifier.c tools.c\
+		   print_u_hexa.c print_ptr.c test_flags.c ft_itoa_base_ll.c \
+		   ft_itoa_base_ull.c ft_putnchar.c min_width.c add_accuracy_options.c \
+		   length_modifier.c tools.c
 
 OBJ_PATH = obj
 OBJ_NAME = $(SRC_NAME:.c=.o)

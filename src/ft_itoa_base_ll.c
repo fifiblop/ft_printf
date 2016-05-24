@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/13 19:15:00 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/19 13:25:28 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/24 13:09:20 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 #include "libft.h"
 
-static long long	ft_nblen(long long n)
+static long long	ft_nblen(long long n, int base)
 {
 	long long		len;
 
@@ -25,7 +25,7 @@ static long long	ft_nblen(long long n)
 	{
 		while (n != 0)
 		{
-			n = n / 10;
+			n = n / base;
 			len++;
 		}
 	}
@@ -45,7 +45,7 @@ char				*ft_itoa_base_ll(long long n, int base)
 
 	if (base < 2 || base > 16)
 		return (NULL);
-	len = ft_nblen(n);
+	len = ft_nblen(n, base);
 	sign = (n < 0) ? 1 : 0;
 	if (!(str = (char*)malloc(sizeof(char) * (len + sign + 1))))
 		return (NULL);

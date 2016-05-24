@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 18:22:17 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/19 17:06:18 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/24 18:10:26 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "printf.h"
 #include <stdlib.h>
 
-void	init_opt(t_opt *opt)
+void			init_opt(t_opt *opt)
 {
 	opt->hash = FALSE;
 	opt->zero = FALSE;
@@ -28,7 +28,19 @@ void	init_opt(t_opt *opt)
 	opt->type = '0';
 }
 
-t_opt	get_options(const char *format, int start, int size)
+void			set_longtype(t_opt *opt)
+{
+	if (opt->type == 'D' || opt->type == 'O' || opt->type == 'U')
+	{
+		if (ft_isupper(opt->type))
+		{
+			opt->mod = l;
+			opt->type = ft_tolower(opt->type);
+		}
+	}
+}
+
+static t_opt	get_options(const char *format, int start, int size)
 {
 	t_opt	opt;
 	char	*str_option;
@@ -41,11 +53,12 @@ t_opt	get_options(const char *format, int start, int size)
 	parse_accuracy(str_option, &opt);
 	parse_length_modifier(str_option, &opt);
 	parse_type(str_option, &opt);
+	set_longtype(&opt);
 	free(str_option);
 	return (opt);
 }
 
-int		parse_format(const char *format, t_list **lst_opt)
+int				parse_format(const char *format, t_list **lst_opt)
 {
 	int		i;
 	int		j;

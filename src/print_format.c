@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 16:44:31 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/19 13:35:55 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/24 18:19:41 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		print_arg(t_opt *opt, va_list *args)
 	else if (opt->type == 'S' || (opt->type == 's' && opt->mod == l))
 		return (0);
 	else if (opt->type == 'p')
-		return (0);
+		return (print_ptr(opt, args));
 	else if (opt->type == 'd' || opt->type == 'i')
 		return (print_s_decimal(opt, args));
 	else if (opt->type == 'D')
@@ -41,7 +41,7 @@ int		print_arg2(t_opt *opt, va_list *args)
 	else if (opt->type == 'U')
 		return (0);
 	else if (opt->type == 'x' || opt->type == 'X')
-		return (0);
+		return (print_u_hexa(opt, args));
 	else if (opt->type == 'c' && opt->mod != l)
 		return (print_c(opt, args));
 	else if (opt->type == 'C' && (opt->type == 'c' && opt->mod == l))

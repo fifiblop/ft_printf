@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 18:17:09 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/19 13:32:59 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/24 13:26:54 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char		*add_acc_opt(t_opt *opt, char *str, int neg)
 		}
 	}
 	size = ft_strlen(str);
-	if (!opt->zero || opt->min_w < size)
+	if (!opt->zero || opt->min_w < size || opt->accu)
 		str = put_options(opt, str, neg);
 	return (str);
 }
