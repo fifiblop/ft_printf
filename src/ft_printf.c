@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 18:09:14 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/12 18:44:51 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/25 12:12:37 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	free_lstopt(t_list **lst_opt)
 		opt = lst->content;
 		tmp = lst;
 		lst = lst->next;
-		free(opt->str);
+		free(opt->opt_str);
 		free(opt);
 		free(tmp);
 	}

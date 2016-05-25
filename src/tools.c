@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 14:53:13 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/12 17:36:58 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/25 12:13:00 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	print_mod(t_mod mod)
 
 void	print_opt(t_opt *opt)
 {
-	ft_putstr(opt->str);
+	ft_putstr(opt->opt_str);
 	ft_putstr(" -> hash : ");
 	print_bool(opt->hash);
 	ft_putstr(" | zero : ");

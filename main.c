@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:13:19 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/24 19:03:39 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/25 17:52:21 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,24 @@
 int		main(void)
 {
 	/*ft_putendl("-----options tests-----");*/
-	/*ft_printf("%+ 010.7ld\n", "fou");*/
-	/*printf("%+ 010.7ld\n", "fou");*/
-	/*ft_printf("je suis %+ #10.7ld lol", "fou");*/
-	/*printf("je suis %+ #10.7ld lol", "fou");*/
-	/*ft_printf("je suis %+-10.7ld lol", "fou");*/
-	/*printf("je suis %+-10.7ld lol", "fou");*/
-	/*ft_printf("je suis %+ 010.-7ld lol", "fou");*/
-	/*printf("je suis %+ 010.-7ld lol", "fou");*/
-	/*ft_printf("je suis %010.7ld lol", "fou");*/
-	/*printf("je suis %010.7ld lol", "fou");*/
-	/*ft_printf("je suis %10.7+ld lol", "fou");*/
-	/*printf("je suis %10.7+ld lol", "fou");*/
+	/*ft_putendl("-----|+ 010.7ld : 42-----");*/
+	/*ft_printf("lol %+ 010.7ld\n", 42);*/
+	/*printf("lol %+ 010.7ld\n", 42);*/
+	/*ft_putendl("-----|+ #10.7ld : 42-----");*/
+	/*ft_printf("lol %+ #10.7ld\n", 42);*/
+	/*printf("lol %+ #10.7ld\n", 42);*/
+	/*ft_putendl("-----|+-10.7ld : -42-----");*/
+	/*ft_printf("lol %+-10.7ld\n", -42);*/
+	/*printf("lol %+-10.7ld\n", -42);*/
+	/*ft_putendl("-----|+ 010.7ld : -42-----");*/
+	/*ft_printf("lol %+ 010.-7ld\n", -42);*/
+	/*printf("lol %+ 010.-7ld\n", -42);*/
+	/*ft_putendl("-----|010.7ld : 42-----");*/
+	/*ft_printf("lol %010.7ld\n", 42);*/
+	/*printf("lol %010.7ld\n", 42);*/
+	/*ft_putendl("-----|10.7ld : 42-----");*/
+	/*ft_printf("lol %10.7+ld\n", 42);*/
+	/*printf("lol %10.7+ld\n", 42);*/
 
 	/*ft_putendl("-----minimum width tests-----");*/
 	/*ft_printf("%.6d", 42);*/
@@ -137,66 +143,66 @@ int		main(void)
 	/*printf("%d\n", ft_printf("%+u\n", 42));*/
 	/*printf("%d\n", printf("%+u\n", 42));*/
 
-	printf("-----|o : -42|-----\n");
-	ft_printf("%o\n", -42);
-	printf("%o\n", -42);
-	printf("-----|ho : -42|-----\n");
-	ft_printf("%ho\n", -42);
-	printf("%ho\n", -42);
-	printf("-----|hho : -42|-----\n");
-	ft_printf("%hho\n", -42);
-	printf("%hho\n", -42);
-	printf("-----|.0o : -42|-----\n");
-	ft_printf("%.0o\n", -42);
-	printf("%.0o\n", -42);
-	printf("-----|5.o : 0|-----\n");
-	ft_printf("%5.o\n", 0);
-	printf("%5.o\n", 0);
-	printf("-----|.0o : 0|-----\n");
-	ft_printf("%.0o\n", 0);
-	printf("%.0o\n", 0);
-	printf("-----|#.0o : 0|-----\n");
-	ft_printf("%#.0o\n", 0);
-	printf("%#.0o\n", 0);
-	printf("-----|12o : 42 -----\n");
-	ft_printf("%12o\n", 42);
-	printf("%12o\n", 42);
-	printf("-----|jo, jo : 0, ULONGMAX|-----\n");
-	printf("%d\n", ft_printf("%jo\n", 4294967295));
-	printf("%d\n", printf("%jo\n", 4294967295));
-	printf("-----|#o : 42 -----\n");
-	printf("%d\n", ft_printf("%#o\n", 42));
-	printf("%d\n", printf("%#o\n", 42));
-	printf("-----|#o : -42 -----\n");
-	ft_printf("%#o\n", -42);
-	printf("%#o\n", -42);
-	printf("-----|#o : 0 -----\n");
-	ft_printf("%#o\n", 0);
-	printf("%#o\n", 0);
-	printf("-----| o : 42 -----\n");
-	ft_printf("% o\n", 42);
-	printf("% o\n", 42);
-	printf("-----|+o : 42 -----\n");
-	ft_printf("%+o\n", 42);
-	printf("%+o\n", 42);
-	printf("-----|O : 65535 -----\n");
-	ft_printf("%O\n", 65535);
-	printf("%O\n", 65535);
-	printf("-----|lo : 4294967295 -----\n");
-	ft_printf("%lo\n", 4294967295);
-	printf("%lo\n", 4294967295);
-	printf("-----|lO : 4294967295 -----\n");
-	ft_printf("%lO\n", 4294967295);
-	printf("%lO\n", 4294967295);
-	printf("-----|hho : 65535 -----\n");
-	ft_printf("%hho\n", 65535);
-	printf("%hho\n", 65535);
-	printf("-----|hhO : 65535 -----\n");
-	ft_printf("%hhO\n", 65535);
-	printf("%hhO\n", 65535);
-	printf("-----|hho : 0 -----\n");
-	ft_printf("%hho\n", 0);
-	printf("%hho\n", 0);
+	/*printf("-----|o : -42|-----\n");*/
+	/*ft_printf("%o\n", -42);*/
+	/*printf("%o\n", -42);*/
+	/*printf("-----|ho : -42|-----\n");*/
+	/*ft_printf("%ho\n", -42);*/
+	/*printf("%ho\n", -42);*/
+	/*printf("-----|hho : -42|-----\n");*/
+	/*ft_printf("%hho\n", -42);*/
+	/*printf("%hho\n", -42);*/
+	/*printf("-----|.0o : -42|-----\n");*/
+	/*ft_printf("%.0o\n", -42);*/
+	/*printf("%.0o\n", -42);*/
+	/*printf("-----|5.o : 0|-----\n");*/
+	/*ft_printf("%5.o\n", 0);*/
+	/*printf("%5.o\n", 0);*/
+	/*printf("-----|.0o : 0|-----\n");*/
+	/*ft_printf("%.0o\n", 0);*/
+	/*printf("%.0o\n", 0);*/
+	/*printf("-----|#.0o : 0|-----\n");*/
+	/*ft_printf("%#.0o\n", 0);*/
+	/*printf("%#.0o\n", 0);*/
+	/*printf("-----|12o : 42 -----\n");*/
+	/*ft_printf("%12o\n", 42);*/
+	/*printf("%12o\n", 42);*/
+	/*printf("-----|jo, jo : 0, ULONGMAX|-----\n");*/
+	/*printf("%d\n", ft_printf("%jo\n", 4294967295));*/
+	/*printf("%d\n", printf("%jo\n", 4294967295));*/
+	/*printf("-----|#o : 42 -----\n");*/
+	/*printf("%d\n", ft_printf("%#o\n", 42));*/
+	/*printf("%d\n", printf("%#o\n", 42));*/
+	/*printf("-----|#o : -42 -----\n");*/
+	/*ft_printf("%#o\n", -42);*/
+	/*printf("%#o\n", -42);*/
+	/*printf("-----|#o : 0 -----\n");*/
+	/*ft_printf("%#o\n", 0);*/
+	/*printf("%#o\n", 0);*/
+	/*printf("-----| o : 42 -----\n");*/
+	/*ft_printf("% o\n", 42);*/
+	/*printf("% o\n", 42);*/
+	/*printf("-----|+o : 42 -----\n");*/
+	/*ft_printf("%+o\n", 42);*/
+	/*printf("%+o\n", 42);*/
+	/*printf("-----|O : 65535 -----\n");*/
+	/*ft_printf("%O\n", 65535);*/
+	/*printf("%O\n", 65535);*/
+	/*printf("-----|lo : 4294967295 -----\n");*/
+	/*ft_printf("%lo\n", 4294967295);*/
+	/*printf("%lo\n", 4294967295);*/
+	/*printf("-----|lO : 4294967295 -----\n");*/
+	/*ft_printf("%lO\n", 4294967295);*/
+	/*printf("%lO\n", 4294967295);*/
+	/*printf("-----|hho : 65535 -----\n");*/
+	/*ft_printf("%hho\n", 65535);*/
+	/*printf("%hho\n", 65535);*/
+	/*printf("-----|hhO : 65535 -----\n");*/
+	/*ft_printf("%hhO\n", 65535);*/
+	/*printf("%hhO\n", 65535);*/
+	/*printf("-----|hho : 0 -----\n");*/
+	/*ft_printf("%hho\n", 0);*/
+	/*printf("%hho\n", 0);*/
 
 	/*printf("-----|x : 0 -----\n");*/
 	/*ft_printf("%x\n", 0);*/
@@ -255,6 +261,41 @@ int		main(void)
 	/*printf("-----|.5p : i -----\n");*/
 	/*ft_printf("%.30p\n", &i);*/
 	/*printf("%.30p\n", &i);*/
+
+	/*printf("----------\n");*/
+	/*ft_printf("%%\n");*/
+	/*printf("%%\n");*/
+	/*printf("----------\n");*/
+	/*ft_printf("%05.%\n");*/
+	/*printf("%05.%\n");*/
+	/*printf("----------\n");*/
+	/*ft_printf("%.%\n");*/
+	/*printf("%.%\n");*/
+	/*printf("----------\n");*/
+	/*ft_printf("%5%\n");*/
+	/*printf("%5%\n");*/
+
+	setlocale(LC_ALL, "");
+	printf("-----|C : 暖-----\n");
+	ft_printf("%C\n",L'暖');
+	printf("%C\n", L'暖');
+	printf("-----|C :-----\n");
+	ft_printf("%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C\n",
+			' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-',
+			'.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';',
+			'<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+			'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+			'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e',
+			'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+			't', 'u', 'v', 'w', 'x', 'y', 'z', 'd', 'r');
+	printf("%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C\n",
+			' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-',
+			'.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';',
+			'<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+			'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+			'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e',
+			'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+			't', 'u', 'v', 'w', 'x', 'y', 'z', '{', 'r');
 
 	return (0);
 }

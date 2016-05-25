@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 18:22:17 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/24 18:10:26 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/25 12:12:02 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ static t_opt	get_options(const char *format, int start, int size)
 	t_opt	opt;
 	char	*str_option;
 
-	str_option = ft_strsub(format, start, (size - start) + 1);
 	init_opt(&opt);
-	opt.str = ft_strdup(str_option);
+	str_option = ft_strsub(format, start, (size - start) + 1);
+	opt.opt_str = ft_strdup(str_option);
 	parse_option(str_option, &opt);
 	parse_min_width(str_option, &opt);
 	parse_accuracy(str_option, &opt);

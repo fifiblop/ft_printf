@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 18:21:49 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/24 19:01:11 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/25 16:53:20 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include <stdarg.h>
+# include <wchar.h>
 
 typedef enum		e_bool
 {
@@ -33,7 +34,7 @@ typedef enum		e_cap
 
 typedef struct		s_opt
 {
-	char			*str;
+	char			*opt_str;
 	t_bool			hash;
 	t_bool			zero;
 	t_bool			plus;
@@ -61,12 +62,14 @@ int					print_arg(t_opt *opt, va_list *args);
 int					print_arg2(t_opt *opt, va_list *args);
 
 int					print_c(t_opt *opt, va_list *args);
+int					print_C(t_opt *opt, va_list *args);
 int					print_str(t_opt *opt, va_list *args);
 int					print_s_decimal(t_opt *opt, va_list *args);
 int					print_u_decimal(t_opt *opt, va_list *args);
 int					print_u_octal(t_opt *opt, va_list *args);
 int					print_u_hexa(t_opt *opt, va_list *args);
 int					print_ptr(t_opt *opt, va_list *args);
+int					print_percent(t_opt *opt);
 
 int					is_option(char c);
 int					is_length_modifier(char c);
@@ -76,6 +79,11 @@ int					is_percent(char c);
 void				print_bool(t_bool bool);
 void				print_mod(t_mod mod);
 void				print_opt(t_opt *opt);
+
+void				ft_putwchar(wchar_t c);
+int					ft_wcharlen(wchar_t c);
+void				ft_putwstr(wchar_t *str);
+int					ft_wstrlen(wchar_t *str);
 
 void				ft_putnchar(char c, int n);
 char				*putchar_before_str(char *str, char c);
