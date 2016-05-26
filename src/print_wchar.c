@@ -16,12 +16,14 @@
 int		print_C(t_opt *opt, va_list *args)
 {
 	wchar_t c;
+	int		size;
 
 	c = va_arg(*args, wint_t);
+	size = ft_wcharlen(c);
 	print_width_before(opt, opt->min_w - 1);
 	ft_putwchar(c);
 	print_width_after(opt, opt->min_w - 1);
 	if (opt->min_w > 0)
 		return (opt->min_w);
-	return (1);
+	return (size);
 }

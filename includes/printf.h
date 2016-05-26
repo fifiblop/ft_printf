@@ -64,6 +64,7 @@ int					print_arg2(t_opt *opt, va_list *args);
 int					print_c(t_opt *opt, va_list *args);
 int					print_C(t_opt *opt, va_list *args);
 int					print_str(t_opt *opt, va_list *args);
+int					print_wstr(t_opt *opt, va_list *args);
 int					print_s_decimal(t_opt *opt, va_list *args);
 int					print_u_decimal(t_opt *opt, va_list *args);
 int					print_u_octal(t_opt *opt, va_list *args);
@@ -80,7 +81,7 @@ void				print_bool(t_bool bool);
 void				print_mod(t_mod mod);
 void				print_opt(t_opt *opt);
 
-void				ft_putwchar(wchar_t c);
+int					ft_putwchar(wchar_t c);
 int					ft_wcharlen(wchar_t c);
 void				ft_putwstr(wchar_t *str);
 int					ft_wstrlen(wchar_t *str);

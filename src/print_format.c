@@ -20,7 +20,7 @@ int		print_arg(t_opt *opt, va_list *args)
 	else if (opt->type == 's' && opt->mod != l)
 		return (print_str(opt, args));
 	else if (opt->type == 'S' || (opt->type == 's' && opt->mod == l))
-		return (0);
+		return (print_wstr(opt, args));
 	else if (opt->type == 'p')
 		return (print_ptr(opt, args));
 	else if (opt->type == 'd' || opt->type == 'i')
