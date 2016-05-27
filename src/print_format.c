@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 16:44:31 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/25 16:53:31 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/27 18:54:11 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		print_arg2(t_opt *opt, va_list *args)
 	else if (opt->type == 'c' && opt->mod != l)
 		return (print_c(opt, args));
 	else if (opt->type == 'C' || (opt->type == 'c' && opt->mod == l))
-		return (print_C(opt, args));
+		return (print_wchar(opt, args));
 	return (0);
 }
 

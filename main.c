@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:13:19 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/25 17:52:21 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/27 19:43:52 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,6 +203,15 @@ int		main(void)
 	/*printf("-----|hho : 0 -----\n");*/
 	/*ft_printf("%hho\n", 0);*/
 	/*printf("%hho\n", 0);*/
+	/*printf("-----|#.3o : 1 -----\n");*/
+	/*ft_printf("%#.3o\n", 1);*/
+	/*printf("%#.3o\n", 1);*/
+	/*printf("-----|#o : 1 -----\n");*/
+	/*ft_printf("%#o\n", 1);*/
+	/*printf("%#o\n", 1);*/
+	/*printf("-----|.3o : 1 -----\n");*/
+	/*ft_printf("%.3o\n", 1);*/
+	/*printf("%.3o\n", 1);*/
 
 	/*printf("-----|x : 0 -----\n");*/
 	/*ft_printf("%x\n", 0);*/
@@ -252,15 +261,33 @@ int		main(void)
 	/*printf("-----|.p : 0 -----\n");*/
 	/*ft_printf("%.p\n", 0);*/
 	/*printf("%.p\n", 0);*/
+	/*printf("-----|.5p : 0 -----\n");*/
+	/*ft_printf("%.5p\n", 0);*/
+	/*printf("%.5p\n", 0);*/
 	/*printf("-----|5.p : 0 -----\n");*/
 	/*ft_printf("%5.p\n", 0);*/
 	/*printf("%5.p\n", 0);*/
 	/*printf("-----|.5p : 0 -----\n");*/
 	/*ft_printf("%.5p\n", 0);*/
 	/*printf("%.5p\n", 0);*/
-	/*printf("-----|.5p : i -----\n");*/
+	/*printf("-----|.30p : i -----\n");*/
 	/*ft_printf("%.30p\n", &i);*/
 	/*printf("%.30p\n", &i);*/
+	/*printf("-----|05p : 0-----\n");*/
+	/*ft_printf("%05p\n", 0);*/
+	/*printf("%05p\n", 0);*/
+	/*printf("-----|025p : i-----\n");*/
+	/*ft_printf("%025p\n", &i);*/
+	/*printf("%025p\n", &i);*/
+	/*printf("-----|0-25p : i-----\n");*/
+	/*ft_printf("%0-25p\n", &i);*/
+	/*printf("%0-25p\n", &i);*/
+	/*printf("-----|25p : i-----\n");*/
+	/*ft_printf("%25p\n", &i);*/
+	/*printf("%25p\n", &i);*/
+	/*printf("-----|-25p : i-----\n");*/
+	/*ft_printf("%-25p\n", &i);*/
+	/*printf("%-25p\n", &i);*/
 
 	/*printf("----------\n");*/
 	/*ft_printf("%%\n");*/
@@ -279,29 +306,48 @@ int		main(void)
 	/*printf("-----|C : 暖-----\n");*/
 	/*ft_printf("%C\n",L'暖');*/
 	/*printf("%C\n", L'暖');*/
-	/*printf("-----|C :-----\n");*/
-	/*ft_printf("%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C\n",*/
-			/*' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-',*/
-			/*'.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';',*/
-			/*'<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',*/
-			/*'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',*/
-			/*'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e',*/
-			/*'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',*/
-			/*'t', 'u', 'v', 'w', 'x', 'y', 'z', '{', 'r');*/
-	/*printf("%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C%C\n",*/
-			/*' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-',*/
-			/*'.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';',*/
-			/*'<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',*/
-			/*'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',*/
-			/*'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e',*/
-			/*'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',*/
-			/*'t', 'u', 'v', 'w', 'x', 'y', 'z', '{', 'r');*/
 
-	printf("-----|05p : 0-----\n");
-	ft_printf("%05p\n", 0);
-	printf("%05p\n", 0);
-	printf("-----|05p : 42-----\n");
-	ft_printf("%05p\n", 42);
-	printf("%05p\n", 42);
+	/*printf("-----|S : 我是一只猫。-----\n");*/
+	/*printf("%d\n", ft_printf("%S\n", L"我是一只猫。"));*/
+	/*printf("%d\n", printf("%S\n", L"我是一只猫。"));*/
+	/*printf("-----|.4S : 我是一只猫。-----\n");*/
+	/*printf("%d\n", ft_printf("%.4S\n", L"我是一只猫。"));*/
+	/*printf("%d\n", printf("%.4S\n", L"我是一只猫。"));*/
+	/*printf("-----|15.4S : 我是一只猫。-----\n");*/
+	/*printf("%d\n", ft_printf("%15.4S\n", L"我是一只猫。"));*/
+	/*printf("%d\n", printf("%15.4S\n", L"我是一只猫。"));*/
+
+	/*ft_printf("%s", 5);*/
+	/*printf("%s", 5);*/
+	/*ft_printf("%--..d", 21);*/
+
+	/*ft_printf("%-21.-10s\n", "coucou");*/
+	/*printf("%-21.-10s", "coucou");*/
+
+	/*ft_printf("%-0.2x\n", 21);*/
+	/*printf("%-0.2x", 21);*/
+
+	/*ft_printf("%-.d%..s%0s\n", 21, "salut", "coucou");*/
+	/*printf("%-.d%..s%0s\n", 21, "salut", "coucou");*/
+	/*ft_printf("%.d\n", 0);*/
+	/*printf("%.d", 0);*/
+
+	ft_printf("%#8x\n", 42);
+	printf("%#8x\n", 42);
+
+	ft_printf("%#08x\n", 42);
+	printf("%#08x\n", 42);
+
+	ft_printf("%#6o\n", 2500);
+	printf("%#6o\n", 2500);
+
+	ft_printf("%-05d\n", -42);
+	printf("%-05d\n", -42);
+
+	ft_printf("%-0+5d\n", 42);
+	printf("%-0+5d\n", 42);
+
+	ft_printf("%-0+5d\n", -42);
+	printf("%-0+5d\n", -42);
 	return (0);
 }

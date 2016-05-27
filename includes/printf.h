@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/08 18:21:49 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/25 16:53:20 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/27 15:17:56 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int					print_arg(t_opt *opt, va_list *args);
 int					print_arg2(t_opt *opt, va_list *args);
 
 int					print_c(t_opt *opt, va_list *args);
-int					print_C(t_opt *opt, va_list *args);
+int					print_wchar(t_opt *opt, va_list *args);
 int					print_str(t_opt *opt, va_list *args);
 int					print_wstr(t_opt *opt, va_list *args);
 int					print_s_decimal(t_opt *opt, va_list *args);

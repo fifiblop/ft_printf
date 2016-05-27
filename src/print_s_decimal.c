@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/13 18:21:19 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/24 15:10:16 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/27 19:26:29 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int			print_s_decimal(t_opt *opt, va_list *args)
 	str = add_acc_opt(opt, str, neg);
 	size = ft_strlen(str);
 	print_width_before_num(opt, opt->min_w - size, neg);
-	if (opt->accu && opt->accu_v == 0)
+	if (opt->accu && opt->accu_v == 0 && i == 0)
 	{
 		free(str);
 		return (0);

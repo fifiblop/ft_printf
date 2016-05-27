@@ -6,7 +6,7 @@
 #    By: pdelefos <pdelefos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 15:22:44 by pdelefos          #+#    #+#              #
-#    Updated: 2016/05/25 16:43:21 by pdelefos         ###   ########.fr        #
+#    Updated: 2016/05/27 11:50:40 by pdelefos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC_NAME = ft_printf.c parse_format.c parse_options.c print_format.c print_c.c \
 		   print_u_hexa.c print_ptr.c print_percent.c test_flags.c \
 		   ft_itoa_base_ll.c ft_itoa_base_ull.c ft_putnchar.c ft_putwchar.c \
 		   min_width.c add_accuracy_options.c length_modifier.c tools.c \
-		   ft_putwstr.c print_wchar.c print_wstr.c ft_atoi_base.c
+		   ft_putwstr.c print_wchar.c print_wstr.c
 
 OBJ_PATH = obj
 OBJ_NAME = $(SRC_NAME:.c=.o)

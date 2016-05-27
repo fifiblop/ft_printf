@@ -6,14 +6,14 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/25 16:02:48 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/25 19:02:36 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/27 15:01:20 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 #include <wchar.h>
 
-int		print_C(t_opt *opt, va_list *args)
+int		print_wchar(t_opt *opt, va_list *args)
 {
 	wchar_t c;
 	int		size;

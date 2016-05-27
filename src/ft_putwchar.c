@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 14:22:47 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/25 19:03:24 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/27 15:00:12 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,59 +17,49 @@
 
 int		ft_wcharlen(wchar_t c)
 {
-		int		len_bin;
-		char	*tmp;
+	int			len;
 
-		tmp = ft_itoa_base_ll((long long)c, 2);
-		len_bin = ft_strlen(tmp);
-		free(tmp);
-		if (len_bin < 8)
-				return (1);
-		else if (len_bin < 12)
-				return (2);
-		else if (len_bin < 17)
-				return (3);
-		else
-				return (4);
+	len = 0;
+	if (c <= 0x7F)
+		len++;
+	else if (c > 0x10FFFF)
+		return (-1);
+	else
+		while (c && ++len > 0)
+			c = c >> 6;
+	return (len);
 }
 
 int		ft_wstrlen(wchar_t *str)
 {
-		int	i;
-		int	size;
+	int	i;
+	int	size;
 
-		i = 0;
-		size = 0;
-		while (str[i])
-				size += ft_wcharlen(str[i++]);
-		return (size);
+	i = 0;
+	size = 0;
+	while (str[i])
+		size += ft_wcharlen(str[i++]);
+	return (size);
 }
 
-int		ft_putwchar(wchar_t c)
+int		ft_putwchar(wint_t x)
 {
-		int					i;
-		unsigned long int	tmp;
-		unsigned char		mask;
-		unsigned char		tab[4];
+	size_t	j;
+	char	c[4];
+	wint_t	tmp;
 
-		if ((mask = 127u) && c <= 0x7F)
-		{
-				ft_putchar((char)c);
-				return (1);
-		}
-		if (!(i = 0) && c > 0x10FFFF)
-				return (-1);
-		while (c)
-		{
-				tmp = 63u & c;
-				c = c >> 6;
-				if (c)
-						tab[i++] = tmp | 128u;
-				else if ((mask = mask >> i))
-						tab[i] = (tmp | (~mask)) & (~(64u >> i));
-		}
-		mask = (unsigned char)i + 1;
-		while (i + 1 > 0)
-				ft_putchar(tab[i--]);
-		return (mask);
+	j = 1;
+	if (x <= 0x7F)
+		return (write(1, &x, 1));
+	if (x > 0x1FFFFF)
+		return (-1);
+	while (1)
+	{
+		tmp = 63u & x;
+		if (!(x >>= 6))
+			break ;
+		c[4 - j++] = 128u | tmp;
+	}
+	c[4 - j] = (-128 >> (j - 1)) | tmp;
+	return (write(1, &(c[4 - j]), j));
 }
