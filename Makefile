@@ -6,7 +6,7 @@
 #    By: pdelefos <pdelefos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/02 15:22:44 by pdelefos          #+#    #+#              #
-#    Updated: 2016/05/27 11:50:40 by pdelefos         ###   ########.fr        #
+#    Updated: 2016/05/28 15:05:12 by pdelefos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,11 +41,6 @@ MAGENTA = \x1b[35;01m
 
 all: makelibft $(NAME)
 
-comp: re main
-
-main:
-	gcc main.c libftprintf.a -Iincludes
-
 $(NAME): $(OBJ) $(LIBFT)
 	@libtool -static -o $@ $^
 	@echo "$(GREEN)libtool$(NO_COLOR) -static -o $(MAGENTA)>>$(NO_COLOR) $(OBJ_PATH) $(LIBFT) $(MAGENTA)>>$(NO_COLOR) $(NAME)"
@@ -77,4 +72,4 @@ norme:
 	norminette $(INC_PATH)/libft.h
 	norminette $(INC_PATH)/printf.h
 
-.PHONY: all clean fclean re norme
+.PHONY: all clean fclean gfclean re norme

@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/24 18:15:22 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/27 18:49:25 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/28 12:34:26 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	*add_0x(char *str, t_opt *opt, long long i)
 	size = ft_strlen(str);
 	if ((i > 0 && (!opt->zero && !opt->accu && opt->min_w < size))
 		|| (i >= 0 && opt->min_w > size && !opt->zero) || (i > 0 && opt->minus)
-		|| (i == 0 && opt->min_w == 0 && !opt->accu))
+		|| (i >= 0 && opt->min_w < size && opt->accu_v < size))
 	{
 		str = putchar_before_str(str, 'x');
 		str = putchar_before_str(str, '0');
@@ -31,7 +31,7 @@ static char	*add_0x(char *str, t_opt *opt, long long i)
 	{
 		write(1, "0x", 2);
 	}
-	if (opt->accu && opt->accu_v == 0 && i == 0)
+	if ((opt->accu && opt->accu_v == 0 && i == 0))
 	{
 		free(str);
 		str = ft_strdup("0x");
@@ -42,6 +42,9 @@ static char	*add_0x(char *str, t_opt *opt, long long i)
 int			get_size_ptr(t_opt *opt, int size)
 {
 	if (opt->accu && opt->accu_v > 0 && opt->min_w < opt->accu_v)
+		size += 2;
+	else if ((opt->accu && opt->accu_v > size)
+			|| (opt->zero && opt->min_w > size))
 		size += 2;
 	return (size);
 }
