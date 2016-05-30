@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/13 18:21:19 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/27 19:26:29 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/28 09:51:42 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int			print_s_decimal(t_opt *opt, va_list *args)
 	int			size;
 	t_bool		neg;
 
+	if (opt->minus)
+		opt->zero = FALSE;
 	i = set_length_modifier(opt, args);
 	neg = (i < 0) ? TRUE : FALSE;
 	str = ft_itoa_base_ll(i, 10);

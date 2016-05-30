@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 11:13:19 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/27 19:43:52 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/28 15:27:58 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int		main(void)
 {
+	printf("@moulitest: %5.x", %5.0x, 0, 0);
 	/*ft_putendl("-----options tests-----");*/
 	/*ft_putendl("-----|+ 010.7ld : 42-----");*/
 	/*ft_printf("lol %+ 010.7ld\n", 42);*/
@@ -143,75 +144,81 @@ int		main(void)
 	/*printf("%d\n", ft_printf("%+u\n", 42));*/
 	/*printf("%d\n", printf("%+u\n", 42));*/
 
-	/*printf("-----|o : -42|-----\n");*/
-	/*ft_printf("%o\n", -42);*/
-	/*printf("%o\n", -42);*/
-	/*printf("-----|ho : -42|-----\n");*/
-	/*ft_printf("%ho\n", -42);*/
-	/*printf("%ho\n", -42);*/
-	/*printf("-----|hho : -42|-----\n");*/
-	/*ft_printf("%hho\n", -42);*/
-	/*printf("%hho\n", -42);*/
-	/*printf("-----|.0o : -42|-----\n");*/
-	/*ft_printf("%.0o\n", -42);*/
-	/*printf("%.0o\n", -42);*/
-	/*printf("-----|5.o : 0|-----\n");*/
-	/*ft_printf("%5.o\n", 0);*/
-	/*printf("%5.o\n", 0);*/
-	/*printf("-----|.0o : 0|-----\n");*/
-	/*ft_printf("%.0o\n", 0);*/
-	/*printf("%.0o\n", 0);*/
-	/*printf("-----|#.0o : 0|-----\n");*/
-	/*ft_printf("%#.0o\n", 0);*/
-	/*printf("%#.0o\n", 0);*/
-	/*printf("-----|12o : 42 -----\n");*/
-	/*ft_printf("%12o\n", 42);*/
-	/*printf("%12o\n", 42);*/
-	/*printf("-----|jo, jo : 0, ULONGMAX|-----\n");*/
-	/*printf("%d\n", ft_printf("%jo\n", 4294967295));*/
-	/*printf("%d\n", printf("%jo\n", 4294967295));*/
-	/*printf("-----|#o : 42 -----\n");*/
-	/*printf("%d\n", ft_printf("%#o\n", 42));*/
-	/*printf("%d\n", printf("%#o\n", 42));*/
-	/*printf("-----|#o : -42 -----\n");*/
-	/*ft_printf("%#o\n", -42);*/
-	/*printf("%#o\n", -42);*/
-	/*printf("-----|#o : 0 -----\n");*/
-	/*ft_printf("%#o\n", 0);*/
-	/*printf("%#o\n", 0);*/
-	/*printf("-----| o : 42 -----\n");*/
-	/*ft_printf("% o\n", 42);*/
-	/*printf("% o\n", 42);*/
-	/*printf("-----|+o : 42 -----\n");*/
-	/*ft_printf("%+o\n", 42);*/
-	/*printf("%+o\n", 42);*/
-	/*printf("-----|O : 65535 -----\n");*/
-	/*ft_printf("%O\n", 65535);*/
-	/*printf("%O\n", 65535);*/
-	/*printf("-----|lo : 4294967295 -----\n");*/
-	/*ft_printf("%lo\n", 4294967295);*/
-	/*printf("%lo\n", 4294967295);*/
-	/*printf("-----|lO : 4294967295 -----\n");*/
-	/*ft_printf("%lO\n", 4294967295);*/
-	/*printf("%lO\n", 4294967295);*/
-	/*printf("-----|hho : 65535 -----\n");*/
-	/*ft_printf("%hho\n", 65535);*/
-	/*printf("%hho\n", 65535);*/
-	/*printf("-----|hhO : 65535 -----\n");*/
-	/*ft_printf("%hhO\n", 65535);*/
-	/*printf("%hhO\n", 65535);*/
-	/*printf("-----|hho : 0 -----\n");*/
-	/*ft_printf("%hho\n", 0);*/
-	/*printf("%hho\n", 0);*/
-	/*printf("-----|#.3o : 1 -----\n");*/
-	/*ft_printf("%#.3o\n", 1);*/
-	/*printf("%#.3o\n", 1);*/
-	/*printf("-----|#o : 1 -----\n");*/
-	/*ft_printf("%#o\n", 1);*/
-	/*printf("%#o\n", 1);*/
-	/*printf("-----|.3o : 1 -----\n");*/
-	/*ft_printf("%.3o\n", 1);*/
-	/*printf("%.3o\n", 1);*/
+	printf("-----|o : -42|-----\n");
+	ft_printf("%o\n", -42);
+	printf("%o\n", -42);
+	printf("-----|ho : -42|-----\n");
+	ft_printf("%ho\n", -42);
+	printf("%ho\n", -42);
+	printf("-----|hho : -42|-----\n");
+	ft_printf("%hho\n", -42);
+	printf("%hho\n", -42);
+	printf("-----|.0o : -42|-----\n");
+	ft_printf("%.0o\n", -42);
+	printf("%.0o\n", -42);
+	printf("-----|5.o : 0|-----\n");
+	ft_printf("%5.o\n", 0);
+	printf("%5.o\n", 0);
+	printf("-----|.0o : 0|-----\n");
+	ft_printf("%.0o\n", 0);
+	printf("%.0o\n", 0);
+	printf("-----|#.0o : 0|-----\n");
+	ft_printf("%#.0o\n", 0);
+	printf("%#.0o\n", 0);
+	printf("-----|12o : 42 -----\n");
+	ft_printf("%12o\n", 42);
+	printf("%12o\n", 42);
+	printf("-----|jo, jo : 0, ULONGMAX|-----\n");
+	printf("%d\n", ft_printf("%jo\n", 4294967295));
+	printf("%d\n", printf("%jo\n", 4294967295));
+	printf("-----|#o : 42 -----\n");
+	printf("%d\n", ft_printf("%#o\n", 42));
+	printf("%d\n", printf("%#o\n", 42));
+	printf("-----|#o : -42 -----\n");
+	ft_printf("%#o\n", -42);
+	printf("%#o\n", -42);
+	printf("-----|#o : 0 -----\n");
+	ft_printf("%#o\n", 0);
+	printf("%#o\n", 0);
+	printf("-----| o : 42 -----\n");
+	ft_printf("% o\n", 42);
+	printf("% o\n", 42);
+	printf("-----|+o : 42 -----\n");
+	ft_printf("%+o\n", 42);
+	printf("%+o\n", 42);
+	printf("-----|O : 65535 -----\n");
+	ft_printf("%O\n", 65535);
+	printf("%O\n", 65535);
+	printf("-----|lo : 4294967295 -----\n");
+	ft_printf("%lo\n", 4294967295);
+	printf("%lo\n", 4294967295);
+	printf("-----|lO : 4294967295 -----\n");
+	ft_printf("%lO\n", 4294967295);
+	printf("%lO\n", 4294967295);
+	printf("-----|hho : 65535 -----\n");
+	ft_printf("%hho\n", 65535);
+	printf("%hho\n", 65535);
+	printf("-----|hhO : 65535 -----\n");
+	ft_printf("%hhO\n", 65535);
+	printf("%hhO\n", 65535);
+	printf("-----|hho : 0 -----\n");
+	ft_printf("%hho\n", 0);
+	printf("%hho\n", 0);
+	printf("-----|#.3o : 1 -----\n");
+	ft_printf("%#.3o\n", 1);
+	printf("%#.3o\n", 1);
+	printf("-----|#o : 1 -----\n");
+	ft_printf("%#o\n", 1);
+	printf("%#o\n", 1);
+	printf("-----|.3o : 1 -----\n");
+	ft_printf("%.3o\n", 1);
+	printf("%.3o\n", 1);
+	printf("-----|#6o : 2500-----\n");
+	ft_printf("|%#6o|\n", 2500);
+	printf("|%#6o|\n", 2500);
+	printf("-----|-#6o : 2500-----\n");
+	ft_printf("|%-#6o|\n", 2500);
+	printf("|%-#6o|\n", 2500);
 
 	/*printf("-----|x : 0 -----\n");*/
 	/*ft_printf("%x\n", 0);*/
@@ -243,6 +250,36 @@ int		main(void)
 	/*printf("-----|#.0x : 0 -----\n");*/
 	/*ft_printf("%#.0x\n", 0);*/
 	/*printf("%#.0x\n", 0);*/
+	/*printf("-----|#x : 42-----\n");*/
+	/*ft_printf("%#x\n", 42);*/
+	/*printf("%#x\n", 42);*/
+	/*printf("-----|#8x : 42-----\n");*/
+	/*ft_printf("%#8x\n", 42);*/
+	/*printf("%#8x\n", 42);*/
+	/*printf("-----|8x : 42-----\n");*/
+	/*ft_printf("%8x\n", 42);*/
+	/*printf("%8x\n", 42);*/
+	/*printf("-----|8X : 42-----\n");*/
+	/*ft_printf("%8X\n", 42);*/
+	/*printf("%8X\n", 42);*/
+	/*printf("-----|#8X : 42-----\n");*/
+	/*ft_printf("%#8X\n", 42);*/
+	/*printf("%#8X\n", 42);*/
+	/*printf("-----|#08x : 42-----\n");*/
+	/*ft_printf("%#08x\n", 42);*/
+	/*printf("%#08x\n", 42);*/
+	/*printf("-----|08x : 42-----\n");*/
+	/*ft_printf("%08x\n", 42);*/
+	/*printf("%08x\n", 42);*/
+	/*printf("-----|#llx : 9223372036854775807-----\n");*/
+	/*ft_printf("%#llx\n", 9223372036854775807);*/
+	/*printf("%#llx\n", 9223372036854775807);*/
+	/*printf("-----|llx : 9223372036854775807-----\n");*/
+	/*ft_printf("%llx\n", 9223372036854775807);*/
+	/*printf("%llx\n", 9223372036854775807);*/
+	/*printf("-----|ll#x : 9223372036854775807-----\n");*/
+	/*ft_printf("%ll#x\n", 9223372036854775807);*/
+	/*printf("%ll#x\n", 9223372036854775807);*/
 
 	/*int i;*/
 	/*i = 0;*/
@@ -252,9 +289,6 @@ int		main(void)
 	/*printf("-----|p : 0 -----\n");*/
 	/*ft_printf("%p\n", 0);*/
 	/*printf("%p\n", 0);*/
-	/*printf("-----|5p : 0 -----\n");*/
-	/*ft_printf("%5p\n", 0);*/
-	/*printf("%5p\n", 0);*/
 	/*printf("-----|.0p : 0 -----\n");*/
 	/*ft_printf("%.0p\n", 0);*/
 	/*printf("%.0p\n", 0);*/
@@ -285,9 +319,21 @@ int		main(void)
 	/*printf("-----|25p : i-----\n");*/
 	/*ft_printf("%25p\n", &i);*/
 	/*printf("%25p\n", &i);*/
+	/*printf("-----|.6p : i-----\n");*/
+	/*ft_printf("%.6p\n", &i);*/
+	/*printf("%.6p\n", &i);*/
 	/*printf("-----|-25p : i-----\n");*/
 	/*ft_printf("%-25p\n", &i);*/
 	/*printf("%-25p\n", &i);*/
+	/*printf("-----|5p : 0 -----\n");*/
+	/*ft_printf("%5p\n", 0);*/
+	/*printf("%5p\n", 0);*/
+	/*printf("-----|05p : 0 -----\n");*/
+	/*ft_printf("|%05p|\n", 0);*/
+	/*printf("|%05p|\n", 0);*/
+	/*printf("-----|05p : i -----\n");*/
+	/*ft_printf("|%05p|\n", &i);*/
+	/*printf("|%05p|\n", &i);*/
 
 	/*printf("----------\n");*/
 	/*ft_printf("%%\n");*/
@@ -332,22 +378,17 @@ int		main(void)
 	/*ft_printf("%.d\n", 0);*/
 	/*printf("%.d", 0);*/
 
-	ft_printf("%#8x\n", 42);
-	printf("%#8x\n", 42);
-
-	ft_printf("%#08x\n", 42);
-	printf("%#08x\n", 42);
-
-	ft_printf("%#6o\n", 2500);
-	printf("%#6o\n", 2500);
-
-	ft_printf("%-05d\n", -42);
-	printf("%-05d\n", -42);
-
-	ft_printf("%-0+5d\n", 42);
-	printf("%-0+5d\n", 42);
-
-	ft_printf("%-0+5d\n", -42);
-	printf("%-0+5d\n", -42);
+	/*printf("-----|#6o : 2500-----\n");*/
+	/*ft_printf("%#6o\n", 2500);*/
+	/*printf("%#6o\n", 2500);*/
+	/*printf("-----|-05d : -42-----\n");*/
+	/*ft_printf("|%-05d|\n", -42);*/
+	/*printf("|%-05d|\n", -42);*/
+	/*printf("-----|-0+5d : -42-----\n");*/
+	/*ft_printf("|%-0+5d|\n", 42);*/
+	/*printf("|%-0+5d|\n", 42);*/
+	/*printf("-----|-0+5d : -42-----\n");*/
+	/*ft_printf("|%-0+5d|\n", -42);*/
+	/*printf("|%-0+5d|\n", -42);*/
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 11:02:59 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/27 14:55:23 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/28 13:33:01 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int		print_u_octal(t_opt *opt, va_list *args)
 	str = ft_itoa_base_ull(i, 8, LOWER);
 	str = add_acc_opt(opt, str, FALSE);
 	size = ft_strlen(str);
+	if (opt->hash && !opt->accu && opt->min_w > size && !opt->minus)
+		size++;
 	print_width_before_num(opt, opt->min_w - size, FALSE);
 	if (opt->accu && opt->accu_v >= size && opt->hash)
 		opt->hash = FALSE;

@@ -6,7 +6,7 @@
 /*   By: pdelefos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/24 14:48:13 by pdelefos          #+#    #+#             */
-/*   Updated: 2016/05/24 19:07:56 by pdelefos         ###   ########.fr       */
+/*   Updated: 2016/05/28 13:09:25 by pdelefos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,32 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-static int	add_sharp(t_opt *opt, int i, int size)
+char		*add_sharp(t_opt *opt, int i, char *str)
 {
-	if (i != 0 && opt->hash && opt->type == 'x')
+	int	size;
+
+	size = ft_strlen(str);
+	if ((i != 0 && opt->hash && opt->type == 'x' &&
+		!opt->zero && opt->min_w > size)
+		|| ((i > 0 || i != 0) && !opt->zero && !opt->accu && opt->min_w < size
+			&& opt->hash && opt->type == 'x'))
 	{
-		write(1, "0x", 2);
-		size += 2;
+		str = putchar_before_str(str, 'x');
+		str = putchar_before_str(str, '0');
 	}
-	if (i != 0 && opt->hash && opt->type == 'X')
+	else if (i != 0 && opt->hash && opt->type == 'X')
 	{
-		write(1, "0X", 2);
-		size += 2;
+		str = putchar_before_str(str, 'X');
+		str = putchar_before_str(str, '0');
 	}
-	return (size);
+	else if (opt->hash && opt->zero && (opt->accu || opt->min_w > size))
+	{
+		if (opt->type == 'X')
+			write(1, "0X", 2);
+		else
+			write(1, "0x", 2);
+	}
+	return (str);
 }
 
 void		null_options_sconv(t_opt *opt)
@@ -60,9 +73,11 @@ int			print_u_hexa(t_opt *opt, va_list *args)
 	if (null_accuracy(opt, str, i))
 		return (0);
 	str = add_acc_opt(opt, str, FALSE);
+	add_sharp(opt, i, str);
 	size = ft_strlen(str);
+	if (opt->hash && opt->zero && (opt->accu || opt->min_w > size))
+		size += 2;
 	print_width_before_num(opt, opt->min_w - size, FALSE);
-	size = add_sharp(opt, i, size);
 	ft_putstr(str);
 	print_width_after(opt, opt->min_w - size);
 	free(str);
