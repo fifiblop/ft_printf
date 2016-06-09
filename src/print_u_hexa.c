@@ -14,13 +14,10 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-char		*add_sharp(t_opt *opt, int i, char *str)
+char		*add_sharp(t_opt *opt, int i, char *str, int size)
 {
-	int	size;
-
-	size = ft_strlen(str);
 	if ((i != 0 && opt->hash && opt->type == 'x' &&
-		!opt->zero && opt->min_w > size)
+		!opt->zero && (opt->min_w > size || (opt->accu && opt->accu_v > size)))
 		|| ((i > 0 || i != 0) && !opt->zero && !opt->accu && opt->min_w < size
 			&& opt->hash && opt->type == 'x'))
 	{
@@ -72,8 +69,9 @@ int			print_u_hexa(t_opt *opt, va_list *args)
 		str = ft_itoa_base_ull(i, 16, UPPER);
 	if (null_accuracy(opt, str, i))
 		return (0);
+	size = ft_strlen(str);
 	str = add_acc_opt(opt, str, FALSE);
-	add_sharp(opt, i, str);
+	add_sharp(opt, i, str, size);
 	size = ft_strlen(str);
 	if (opt->hash && opt->zero && (opt->accu || opt->min_w > size))
 		size += 2;
